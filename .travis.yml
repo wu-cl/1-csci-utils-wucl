@@ -1,4 +1,5 @@
 language: python
+python: 3.7
 dist: xenial
 cache: false
 env:
@@ -13,12 +14,7 @@ matrix:
     - python: '3.6'
       env:
         - TOXENV=docs
-    - env:
-        - TOXENV=py27
-      python: '2.7'
-    - env:
-        - TOXENV=py35
-      python: '3.5'
+
     - env:
         - TOXENV=py36
       python: '3.6'
@@ -44,7 +40,7 @@ install:
   - virtualenv --version
   - easy_install --version
   - pip --version
-  - tox --version
+  - tox-travis--version
 script:
   - tox -v
 after_failure:
